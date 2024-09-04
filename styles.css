@@ -1,0 +1,560 @@
+:root {
+  --primary-color: #e7622e;
+  --secondary-color: #fff;
+  --text-color: #333;
+  --accent-color: #ff4e4e;
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Lato", sans-serif;
+  --card-color:#d8d8d8;
+  --background-2:#f5c4b1;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a{
+  text-decoration: none;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.top-bar {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  font-weight: 550;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.language {
+  font-weight: bold;
+}
+
+/* ============ Hero Section ======= */
+.hero {
+  position: relative;
+  background: url("./images/Worried-man1.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 30 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  color: var(--secondary-color);
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 1px solid var(--secondary-color);
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  transition: background-color 0.8s ease;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+}
+
+/* ============ End of Hero-Section========= */
+
+/* ========About-product ========== */
+.about-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--background-2);
+}
+
+
+.product-details {
+    flex: 1;
+    
+}
+.product-content{
+  padding: 0.9rem 4rem;
+
+}
+.product-content li{
+  font-size: 20px;
+}
+
+.product-image{
+  width: 50%;
+}
+
+.product-image img {
+  max-width: 100%;
+ 
+}
+
+.btn-secondary{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.6rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  /* margin-top: 5px; */
+}
+
+
+
+
+/* ========= Benefits Section =================*/
+.benefits {
+  padding: 50px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.benefits h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefits-card {
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.benefits-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: var(--font-heading);
+  margin-bottom: 15px;
+}
+
+.benefits-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.benefits-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ============ Usage Instructions Section============= */
+.usage {
+  padding: 50px 20px;
+  background-color:var(--background-2);
+  color:var(--text-color);
+}
+
+.usage p {
+  font-size: 1.1rem;
+}
+
+.usage-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.glass{
+  width: 40%;
+
+}
+
+.glass img{
+  width: 100%;;
+}
+
+.usage-content li{
+  font-size: 20px;
+}
+
+
+/*========== Side effect and Caution Section =======*/
+
+.ingredients-caution {
+  background: #ffffff;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+
+  margin: 2rem 0;
+}
+
+.ingredients-caution .container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.ingredients-caution .card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ingredients-caution .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ingredients-caution .card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.ingredients-caution .card p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+/* ================= Customer Reviews Section ================= */
+.reviews {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.review-slider {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.review-card p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.reviewer {
+  font-weight: bold;
+  color: #ff9900;
+}
+
+
+
+/* ========= Call to Action Section  ============ */
+.cta {
+  padding: 50px 20px;
+  background-color:var(--primary-color);
+  color: #fff;
+  text-align: center;
+}
+
+
+
+footer {
+  padding: 20px;
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+footer p {
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+
+
+
+/* ========== Media Querires============= */
+@media (max-width: 768px) { /* Tablet */
+
+  /* ====== Hero Section */
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  /*  ============ About-product =========== */
+
+  .about-product {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+
+  .product-details {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+.product-content{
+  padding: 0.9rem 2rem;
+}
+  .product-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .product-content p {
+    font-size: 1rem;
+  }
+
+  .btn-secondary {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  /* ========= How to use ========== */
+  .usage-container {
+    flex-direction: column;
+  }
+
+  .usage-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .usage-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .usage-content ul {
+    font-size: 1rem;
+  }
+
+  .glass {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile */
+
+  /* ===== Hero section ========= */
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+
+  /* ====== About - Product ======== */
+  .about-product {
+    padding: 30px 0px;
+  }
+
+  .product-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .product-content p {
+    font-size: 0.9rem;
+  }
+
+  .product-image {
+    width: 80%;
+  }
+
+
+
+
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+
+  /* ====== How to use ========== */
+  .usage {
+    padding: 30px 10px;
+  }
+
+  .usage-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .usage-content ul {
+    font-size: 0.9rem;
+  }
+
+  .usage-content ul li {
+    margin-bottom: 8px;
+  }
+
+  .glass {
+    width: 100%;
+  }
+
+
+}
